@@ -1,8 +1,9 @@
 ﻿using TensorFlowLite;
 using UnityEngine;
 using UnityEngine.UI;
+using TextureSource;
 
-[RequireComponent(typeof(WebCamInput))]
+[RequireComponent(typeof(VirtualTextureSource))]
 public class SsdSample : MonoBehaviour
 {
     [SerializeField]
@@ -28,7 +29,7 @@ public class SsdSample : MonoBehaviour
     {
 #if UNITY_ANDROID && !UNITY_EDITOR
         // This is an example usage of the NNAPI delegate.
-        if (options.accelerator == SSD.Accelerator.NNAPI && !Application.isEditor)
+        if (options.delegateType == TfLiteDelegateType.NNAPI && !Application.isEditor)
         {
             string cacheDir = Application.persistentDataPath;
             string modelToken = "ssd-token";
@@ -58,18 +59,24 @@ public class SsdSample : MonoBehaviour
         // Labels
         labels = labelMap.text.Split('\n');
 
-        GetComponent<WebCamInput>().OnTextureUpdate.AddListener(Invoke);
+        if (TryGetComponent(out VirtualTextureSource source))
+        {
+            source.OnTexture.AddListener(Invoke);
+        }
     }
 
     private void OnDestroy()
     {
-        GetComponent<WebCamInput>().OnTextureUpdate.RemoveListener(Invoke);
+        if (TryGetComponent(out VirtualTextureSource source))
+        {
+            source.OnTexture.RemoveListener(Invoke);
+        }
         ssd?.Dispose();
     }
 
     private void Invoke(Texture texture)
     {
-        ssd.Invoke(texture);
+        ssd.Run(texture);
 
         SSD.Result[] results = ssd.GetResults();
         Vector2 size = (frameContainer.transform as RectTransform).rect.size;
