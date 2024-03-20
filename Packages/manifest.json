@@ -1,12 +1,22 @@
 {
+  "scopedRegistries": [
+    {
+      "name": "npm",
+      "url": "https://registry.npmjs.com",
+      "scopes": [
+        "com.github.asus4"
+      ]
+    }
+  ],
   "dependencies": {
     "com.github.asus4.mediapipe": "file:../../tf-lite-unity-sample/Packages/com.github.asus4.mediapipe",
     "com.github.asus4.tflite": "file:../../tf-lite-unity-sample/Packages/com.github.asus4.tflite",
     "com.github.asus4.tflite.common": "file:../../tf-lite-unity-sample/Packages/com.github.asus4.tflite.common",
-    "com.unity.ide.visualstudio": "2.0.20",
-    "com.unity.textmeshpro": "3.0.6",
-    "com.unity.timeline": "1.7.5",
-    "com.unity.ugui": "1.0.0",
+    "com.github.asus4.texture-source": "0.3.0",
+    "com.unity.ide.visualstudio": "2.0.22",
+    "com.unity.timeline": "1.8.6",
+    "com.unity.ugui": "2.0.0",
+    "com.unity.modules.accessibility": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
     "com.unity.modules.assetbundle": "1.0.0",

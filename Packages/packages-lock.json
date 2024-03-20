@@ -5,9 +5,18 @@
       "depth": 0,
       "source": "local",
       "dependencies": {
-        "com.github.asus4.tflite": "2.13.0",
-        "com.github.asus4.tflite.common": "2.13.0"
+        "com.github.asus4.tflite": "2.15.0",
+        "com.github.asus4.tflite.common": "2.15.0"
       }
+    },
+    "com.github.asus4.texture-source": {
+      "version": "0.3.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.video": "1.0.0"
+      },
+      "url": "https://registry.npmjs.com"
     },
     "com.github.asus4.tflite": {
       "version": "file:../../tf-lite-unity-sample/Packages/com.github.asus4.tflite",
@@ -20,18 +29,29 @@
       "depth": 0,
       "source": "local",
       "dependencies": {
-        "com.github.asus4.tflite": "2.13.0"
+        "com.unity.burst": "1.8.12",
+        "com.github.asus4.tflite": "2.15.0"
       }
     },
+    "com.unity.burst": {
+      "version": "1.8.12",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.mathematics": "1.2.1",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.ext.nunit": {
-      "version": "1.0.6",
+      "version": "2.0.5",
       "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.20",
+      "version": "2.0.22",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -39,28 +59,26 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.mathematics": {
+      "version": "1.2.6",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.test-framework": {
-      "version": "1.1.33",
+      "version": "1.3.9",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.ext.nunit": "1.0.6",
+        "com.unity.ext.nunit": "2.0.3",
         "com.unity.modules.imgui": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.textmeshpro": {
-      "version": "3.0.6",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.timeline": {
-      "version": "1.7.5",
+      "version": "1.8.6",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -72,13 +90,19 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ugui": {
-      "version": "1.0.0",
+      "version": "2.0.0",
       "depth": 0,
       "source": "builtin",
       "dependencies": {
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
+    },
+    "com.unity.modules.accessibility": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
     },
     "com.unity.modules.androidjni": {
       "version": "1.0.0",
